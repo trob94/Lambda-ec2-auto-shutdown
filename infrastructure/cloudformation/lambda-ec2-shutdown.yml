@@ -60,7 +60,7 @@ Resources:
     Type: AWS::Events::Rule
     Properties:
       Name: !Sub "${LambdaFunctionName}-ScheduleRule"
-      ScheduleExpression: "cron(0 19 * * ? *)"  # 7 PM UTC daily (fixed the cron expression)
+      ScheduleExpression: "cron(0 19 * * ? *)"
       State: ENABLED
       Targets:
         - Arn: !GetAtt LambdaFunction.Arn
